@@ -9,48 +9,49 @@
         * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
         body { margin: 0; padding: 8px; background: #f5f5f5; font-size: 14px; }
         h1 { font-size: 18px; margin: 0 0 12px 0; color: #1a1a1a; text-align: center; }
-  .card { background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+ .card { background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         button { width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: 600; font-size: 14px; margin: 6px 0; cursor: pointer; }
         button:active { opacity: 0.8; }
-  .btn-green { background: #2e7d32; color: white; }
-  .btn-blue { background: #1976d2; color: white; }
-  .btn-red { background: #d32f2f; color: white; }
-  .btn-gray { background: #757575; color: white; }
-  .btn-orange { background: #f57c00; color: white; }
+ .btn-green { background: #2e7d32; color: white; }
+ .btn-blue { background: #1976d2; color: white; }
+ .btn-red { background: #d32f2f; color: white; }
+ .btn-gray { background: #757575; color: white; }
+ .btn-orange { background: #f57c00; color: white; }
         input[type="file"], input[type="text"], input[type="number"] { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 14px; margin: 6px 0; }
         label { display: block; font-weight: 600; margin-top: 8px; color: #333; font-size: 13px; }
-  .btn-row { display: flex; gap: 8px; }
-  .btn-row button { flex: 1; }
-  .total-box { background: #e3f2fd; padding: 14px; border-radius: 10px; margin-bottom: 12px; text-align: center; font-weight: 700; font-size: 16px; color: #0d47a1; }
-  .client-card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
-  .client-name { font-weight: 700; font-size: 16px; color: #1a1a1a; margin-bottom: 6px; }
-  .client-info { font-size: 13px; color: #555; margin: 3px 0; }
-  .client-debt { font-weight: 600; color: #d32f2f; font-size: 14px; }
-  .tip { font-size: 12px; color: #27ae60; text-align: center; margin-top: 6px; font-weight: 600; }
-  .hidden { display: none; }
-  .add-form { background: #f0f7ff; padding: 12px; border-radius: 10px; margin-bottom: 12px; }
-  .license-screen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #f5f5f5; z-index: 9999; padding: 20px; display: flex; align-items: center; justify-content: center; }
-  .license-box { background: white; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: center; }
-  .license-box h2 { margin: 0 0 16px 0; color: #1a1a1a; }
-  .license-box p { color: #666; line-height: 1.6; margin: 12px 0; }
-  .days-left { background: #fff3e0; color: #e65100; padding: 10px; border-radius: 8px; font-weight: 700; margin: 12px 0; }
-  .expired { background: #ffebee; color: #c62828; }
-  .activated { background:#e8f5e9; color:#2e7d32; }
+ .btn-row { display: flex; gap: 8px; }
+ .btn-row button { flex: 1; }
+ .total-box { background: #e3f2fd; padding: 14px; border-radius: 10px; margin-bottom: 12px; text-align: center; font-weight: 700; font-size: 16px; color: #0d47a1; }
+ .client-card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+ .client-name { font-weight: 700; font-size: 16px; color: #1a1a1a; margin-bottom: 6px; }
+ .client-info { font-size: 13px; color: #555; margin: 3px 0; }
+ .client-debt { font-weight: 600; color: #d32f2f; font-size: 14px; }
+ .tip { font-size: 12px; color: #27ae60; text-align: center; margin-top: 6px; font-weight: 600; }
+ .hidden { display: none!important; }
+ .add-form { background: #f0f7ff; padding: 12px; border-radius: 10px; margin-bottom: 12px; }
+ .license-screen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #f5f5f5; z-index: 9999; padding: 20px; display: flex; align-items: center; justify-content: center; }
+ .license-box { background: white; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: center; }
+ .license-box h2 { margin: 0 0 16px 0; color: #1a1a1a; }
+ .license-box p { color: #666; line-height: 1.6; margin: 12px 0; }
+ .days-left { background: #fff3e0; color: #e65100; padding: 10px; border-radius: 8px; font-weight: 700; margin: 12px 0; }
+ .expired { background: #ffebee; color: #c62828; }
+ .activated { background:#e8f5e9; color:#2e7d32; }
     </style>
 </head>
 <body>
-    <div class="license-screen hidden" id="licenseScreen">
+    <div class="license-screen" id="licenseScreen">
         <div class="license-box">
             <h2>تفعيل التطبيق</h2>
             <div id="trialInfo"></div>
             <input type="text" id="licenseCode" placeholder="ادخل كود التفعيل">
             <button class="btn-green" onclick="activateApp()">تفعيل الآن</button>
-            <button class="btn-blue" onclick="continueTrial()">استمرار التجربة</button>
+            <button class="btn-blue" id="trialBtn" onclick="continueTrial()">استمرار التجربة</button>
+            <button class="btn-gray" onclick="resetApp()" style="margin-top: 20px; font-size: 12px;">إعادة ضبط التطبيق</button>
             <p style="font-size: 11px; margin-top: 16px;">للتواصل والحصول على كود: واتساب 967774410166</p>
         </div>
     </div>
 
-    <div id="mainApp">
+    <div id="mainApp" class="hidden">
         <h1>إدارة ديون العملاء</h1>
         <div class="total-box" id="totalDebt">إجمالي الديون: 0 ريال</div>
 
@@ -86,8 +87,6 @@
 
 <script>
 let clients = [];
-
-// رابط ملف الأكواد حقك مضبوط
 const LICENSE_URL = 'https://raw.githubusercontent.com/waddahbakil/debt-clients/main/codes.json';
 
 function getDeviceId() {
@@ -100,14 +99,13 @@ function getDeviceId() {
 }
 
 function checkLicense() {
-    const installDate = localStorage.getItem('installDate');
     const activated = localStorage.getItem('activated');
-
     if (activated === 'true') return true;
 
+    let installDate = localStorage.getItem('installDate');
     if (!installDate) {
-        localStorage.setItem('installDate', Date.now());
-        return true;
+        installDate = Date.now();
+        localStorage.setItem('installDate', installDate);
     }
 
     const daysUsed = Math.floor((Date.now() - parseInt(installDate)) / (1000 * 60 * 60 * 24));
@@ -116,23 +114,28 @@ function checkLicense() {
     if (daysLeft <= 0) {
         showLicense(true);
         return false;
-    } else {
-        return true;
     }
+    return true;
 }
 
 function showLicense(expired = false) {
     const installDate = localStorage.getItem('installDate');
     const daysUsed = Math.floor((Date.now() - parseInt(installDate)) / (1000 * 60 * 60 * 24));
     const daysLeft = 3 - daysUsed;
+    const activated = localStorage.getItem('activated') === 'true';
 
     const trialInfo = document.getElementById('trialInfo');
-    if (expired) {
-        trialInfo.innerHTML = `<div class="days-left expired">انتهت الفترة التجريبية<br>ادخل كود التفعيل للاستمرار</div>`;
-    } else if (localStorage.getItem('activated') === 'true') {
+    const trialBtn = document.getElementById('trialBtn');
+
+    if (activated) {
         trialInfo.innerHTML = `<div class="days-left activated">✓ التطبيق مفعل</div>`;
+        trialBtn.classList.add('hidden');
+    } else if (expired) {
+        trialInfo.innerHTML = `<div class="days-left expired">انتهت الفترة التجريبية<br>ادخل كود التفعيل للاستمرار</div>`;
+        trialBtn.classList.add('hidden');
     } else {
         trialInfo.innerHTML = `<div class="days-left">متبقي ${daysLeft} يوم من التجربة المجانية</div>`;
+        trialBtn.classList.remove('hidden');
     }
 
     document.getElementById('licenseScreen').classList.remove('hidden');
@@ -140,9 +143,15 @@ function showLicense(expired = false) {
 }
 
 function continueTrial() {
-    if (checkLicense()) {
-        document.getElementById('licenseScreen').classList.add('hidden');
-        document.getElementById('mainApp').classList.remove('hidden');
+    document.getElementById('licenseScreen').classList.add('hidden');
+    document.getElementById('mainApp').classList.remove('hidden');
+    initApp();
+}
+
+function resetApp() {
+    if (confirm('متأكد؟ بيمسح كل البيانات ويبدأ التجربة من جديد')) {
+        localStorage.clear();
+        location.reload();
     }
 }
 
@@ -155,6 +164,7 @@ async function activateApp() {
 
     try {
         const res = await fetch(LICENSE_URL + '?t=' + Date.now());
+        if (!res.ok) throw new Error('Network');
         const data = await res.json();
 
         if (data.valid_codes.includes(code) &&!data.used_codes.includes(code)) {
@@ -163,8 +173,7 @@ async function activateApp() {
 
             document.getElementById('licenseScreen').classList.add('hidden');
             document.getElementById('mainApp').classList.remove('hidden');
-            loadData();
-            renderClients();
+            initApp();
 
             alert('تم التفعيل بنجاح ✓');
         } else if (data.used_codes.includes(code)) {
@@ -173,8 +182,13 @@ async function activateApp() {
             alert('كود خاطئ');
         }
     } catch (e) {
-        alert('تأكد من اتصال النت وأن رابط الأكواد صحيح');
+        alert('خطأ في الاتصال. تأكد من النت ومن رابط codes.json');
     }
+}
+
+function initApp() {
+    loadData();
+    renderClients();
 }
 
 function normalizeArabic(text) {
@@ -329,8 +343,11 @@ function sendToAll(type) {
 
 window.onload = function() {
     if (checkLicense()) {
-        loadData();
-        renderClients();
+        document.getElementById('licenseScreen').classList.add('hidden');
+        document.getElementById('mainApp').classList.remove('hidden');
+        initApp();
+    } else {
+        showLicense(true);
     }
 };
 </script>
