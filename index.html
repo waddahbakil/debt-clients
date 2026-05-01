@@ -7,48 +7,38 @@
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
     <style>
         * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
-        body { margin: 0; padding: 8px; background: #f5f5; font-size: 14px; }
+        body { margin: 0; padding: 8px; background: #f5f5f5; font-size: 14px; }
         h1 { font-size: 18px; margin: 0 0 12px 0; color: #1a1a1a; text-align: center; }
-       .card { background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+     .card { background: white; border-radius: 12px; padding: 14px; margin-bottom: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
         button { width: 100%; padding: 12px; border-radius: 8px; border: none; font-weight: 600; font-size: 14px; margin: 6px 0; cursor: pointer; }
         button:active { opacity: 0.8; }
-       .btn-green { background: #2e7d32; color: white; }
-       .btn-blue { background: #1976d2; color: white; }
-       .btn-red { background: #d32f2f; color: white; }
-       .btn-gray { background: #757575; color: white; }
-       .btn-orange { background: #f57c00; color: white; }
+     .btn-green { background: #2e7d32; color: white; }
+     .btn-blue { background: #1976d2; color: white; }
+     .btn-red { background: #d32f2f; color: white; }
+     .btn-gray { background: #757575; color: white; }
+     .btn-orange { background: #f57c00; color: white; }
         input[type="file"], input[type="text"], input[type="number"] { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; font-size: 14px; margin: 6px 0; }
         label { display: block; font-weight: 600; margin-top: 8px; color: #333; font-size: 13px; }
-       .btn-row { display: flex; gap: 8px; }
-       .btn-row button { flex: 1; }
-       .total-box { background: #e3f2fd; padding: 14px; border-radius: 10px; margin-bottom: 12px; text-align: center; font-weight: 700; font-size: 16px; color: #0d47a1; }
-       .client-card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
-       .client-name { font-weight: 700; font-size: 16px; color: #1a1a1a; margin-bottom: 6px; }
-       .client-info { font-size: 13px; color: #555; margin: 3px 0; }
-       .client-debt { font-weight: 600; color: #d32f2f; font-size: 14px; }
-       .tip { font-size: 12px; color: #27ae60; text-align: center; margin-top: 6px; font-weight: 600; }
-       .hidden { display: none; }
-       .add-form { background: #f0f7ff; padding: 12px; border-radius: 10px; margin-bottom: 12px; }
-       .delete-btn { background: #ff4444; color: white; border: none; padding: 4px 6px; border-radius: 4px; font-size: 10px; cursor: pointer; width: auto; }
-       .search-box { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
-       .search-box input { flex: 1; margin: 0; }
-       .search-box button { width: auto; padding: 8px 12px; margin: 0; }
-        tr.hidden-row { display: none; }
-       .table-wrapper { overflow-x: auto; margin-top: 8px; }
-        table { width: 100%; border-collapse: collapse; font-size: 12px; table-layout: fixed; }
-        th, td { border: 1px solid #e0e0e0; padding: 6px 2px; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-
-        /* شاشة التفعيل */
-       .license-screen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #f5f5f5; z-index: 9999; padding: 20px; display: flex; align-items: center; justify-content: center; }
-       .license-box { background: white; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: center; }
-       .license-box h2 { margin: 0 0 16px 0; color: #1a1a1a; }
-       .license-box p { color: #666; line-height: 1.6; margin: 12px 0; }
-       .days-left { background: #fff3e0; color: #e65100; padding: 10px; border-radius: 8px; font-weight: 700; margin: 12px 0; }
-       .expired { background: #ffebee; color: #c62828; }
+     .btn-row { display: flex; gap: 8px; }
+     .btn-row button { flex: 1; }
+     .total-box { background: #e3f2fd; padding: 14px; border-radius: 10px; margin-bottom: 12px; text-align: center; font-weight: 700; font-size: 16px; color: #0d47a1; }
+     .client-card { background: #fafafa; border: 1px solid #e0e0e0; border-radius: 10px; padding: 12px; margin-bottom: 10px; }
+     .client-name { font-weight: 700; font-size: 16px; color: #1a1a1a; margin-bottom: 6px; }
+     .client-info { font-size: 13px; color: #555; margin: 3px 0; }
+     .client-debt { font-weight: 600; color: #d32f2f; font-size: 14px; }
+     .tip { font-size: 12px; color: #27ae60; text-align: center; margin-top: 6px; font-weight: 600; }
+     .hidden { display: none; }
+     .add-form { background: #f0f7ff; padding: 12px; border-radius: 10px; margin-bottom: 12px; }
+     .license-screen { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: #f5f5f5; z-index: 9999; padding: 20px; display: flex; align-items: center; justify-content: center; }
+     .license-box { background: white; border-radius: 16px; padding: 24px; max-width: 400px; width: 100%; box-shadow: 0 4px 12px rgba(0,0,0,0.15); text-align: center; }
+     .license-box h2 { margin: 0 0 16px 0; color: #1a1a1a; }
+     .license-box p { color: #666; line-height: 1.6; margin: 12px 0; }
+     .days-left { background: #fff3e0; color: #e65100; padding: 10px; border-radius: 8px; font-weight: 700; margin: 12px 0; }
+     .expired { background: #ffebee; color: #c62828; }
+     .activated { background:#e8f5e9; color:#2e7d32; }
     </style>
 </head>
 <body>
-    <!-- شاشة التفعيل -->
     <div class="license-screen hidden" id="licenseScreen">
         <div class="license-box">
             <h2>تفعيل التطبيق</h2>
@@ -60,7 +50,6 @@
         </div>
     </div>
 
-    <!-- التطبيق الأساسي -->
     <div id="mainApp">
         <h1>إدارة ديون العملاء</h1>
         <div class="total-box" id="totalDebt">إجمالي الديون: 0 ريال</div>
@@ -77,7 +66,7 @@
                 <button class="btn-red" onclick="clearAll()">حذف الكل</button>
             </div>
             <div class="btn-row">
-                <button class="btn-orange" onclick="showLicense()">تفعيل التطبيق</button>
+                <button class="btn-orange" onclick="showLicense()">حالة التفعيل</button>
             </div>
             <div class="tip">✓ يتم الحفظ تلقائياً</div>
         </div>
@@ -98,21 +87,25 @@
 <script>
 let clients = [];
 
-// رابط ملف الأكواد على GitHub - غيره لرابطك
-const LICENSE_URL = 'https://raw.githubusercontent.com/waddahbakil/debt-clients/refs/heads/main/codes.json';
-// غير username/repo لرابط مستودعك
+// غيّر هذا الرابط لرابط ملف codes.json حقك
+const LICENSE_URL = 'https://raw.githubusercontent.com/waddahbakil/debt-clients/main/codes.json';
 
-// نظام التفعيل
+function getDeviceId() {
+    let deviceId = localStorage.getItem('deviceId');
+    if (!deviceId) {
+        deviceId = 'DEV-' + Math.random().toString(36).substr(2, 9) + Date.now();
+        localStorage.setItem('deviceId', deviceId);
+    }
+    return deviceId;
+}
+
 function checkLicense() {
     const installDate = localStorage.getItem('installDate');
     const activated = localStorage.getItem('activated');
 
-    if (activated === 'true') {
-        return true; // مفعل
-    }
+    if (activated === 'true') return true;
 
     if (!installDate) {
-        // أول مرة يفتح التطبيق
         localStorage.setItem('installDate', Date.now());
         return true;
     }
@@ -121,7 +114,7 @@ function checkLicense() {
     const daysLeft = 3 - daysUsed;
 
     if (daysLeft <= 0) {
-        showLicense(true); // انتهت التجربة
+        showLicense(true);
         return false;
     } else {
         return true;
@@ -137,7 +130,7 @@ function showLicense(expired = false) {
     if (expired) {
         trialInfo.innerHTML = `<div class="days-left expired">انتهت الفترة التجريبية<br>ادخل كود التفعيل للاستمرار</div>`;
     } else if (localStorage.getItem('activated') === 'true') {
-        trialInfo.innerHTML = `<div class="days-left" style="background:#e8f5e9;color:#2e7d32">✓ التطبيق مفعل</div>`;
+        trialInfo.innerHTML = `<div class="days-left activated">✓ التطبيق مفعل</div>`;
     } else {
         trialInfo.innerHTML = `<div class="days-left">متبقي ${daysLeft} يوم من التجربة المجانية</div>`;
     }
@@ -154,30 +147,32 @@ function continueTrial() {
 }
 
 async function activateApp() {
-    const code = document.getElementById('licenseCode').value.trim();
+    const code = document.getElementById('licenseCode').value.trim().toUpperCase();
     if (!code) {
         alert('ادخل الكود');
         return;
     }
 
     try {
-        const res = await fetch(LICENSE_URL + '?t=' + Date.now()); // منع الكاش
-        const codes = await res.json();
+        const res = await fetch(LICENSE_URL + '?t=' + Date.now());
+        const data = await res.json();
 
-        if (codes.valid_codes.includes(code)) {
+        if (data.valid_codes.includes(code) &&!data.used_codes.includes(code)) {
             localStorage.setItem('activated', 'true');
+            localStorage.setItem('usedCode', code);
             alert('تم التفعيل بنجاح ✓');
             document.getElementById('licenseScreen').classList.add('hidden');
             document.getElementById('mainApp').classList.remove('hidden');
+        } else if (data.used_codes.includes(code)) {
+            alert('هذا الكود مستخدم من قبل على جهاز آخر');
         } else {
             alert('كود خاطئ');
         }
     } catch (e) {
-        alert('تأكد من اتصال النت');
+        alert('تأكد من اتصال النت وأن رابط الأكواد صحيح');
     }
 }
 
-// باقي كود التطبيق نفس اللي قبل
 function normalizeArabic(text) {
     if (!text) return '';
     return text.toString().toLowerCase().replace(/أ|إ|آ/g, 'ا').replace(/ة/g, 'ه').replace(/ى/g, 'ي').replace(/ئ|ؤ/g, 'ي').replace(/[ًٌٍَُِّْ]/g, '').replace(/\s+/g, ' ').trim();
@@ -328,7 +323,6 @@ function sendToAll(type) {
     });
 }
 
-// تشغيل التطبيق
 window.onload = function() {
     if (checkLicense()) {
         loadData();
